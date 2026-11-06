@@ -1,16 +1,33 @@
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 
+const areaClass =
+  'min-h-32 rounded-xl border-2 border-dashed border-border bg-surface p-4 text-muted';
+
 function App() {
   return (
     <>
-      <div className="min-h-screen bg-background p-4 text-foreground">
-        <Header />
-      </div>
-
-      <div className="flex-1 bg-background p-4 text-foreground">
-        <Footer />
-      </div>
+      <main
+        className="grid flex-1 grid-cols-1 content-start gap-4 p-4
+          md:grid-cols-2 md:gap-6 md:p-6
+          xl:grid-cols-[15rem_1fr_1fr] xl:p-8"
+      >
+        <nav
+          id="menu"
+          className={`${areaClass} md:col-span-2 xl:col-span-1 xl:row-span-2`}
+        >
+          placeholder
+        </nav>
+        <section id="summary" className={`${areaClass} md:col-span-2`}>
+          placeholder (cards)
+        </section>
+        <section id="list" className={`${areaClass} xl:min-h-80`}>
+          placeholder
+        </section>
+        <section id="chart" className={`${areaClass} xl:min-h-80`}>
+          placeholder
+        </section>
+      </main>
     </>
   );
 }

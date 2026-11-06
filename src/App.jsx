@@ -6,9 +6,10 @@ const areaClass =
 
 function App() {
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
+      <Header />
       <main
-        className="grid flex-1 grid-cols-1 content-start gap-4 p-4
+        className="grid flex-1 grid-cols-1 content-start gap-4 p-4 bg-background
           md:grid-cols-2 md:gap-6 md:p-6
           xl:grid-cols-[15rem_1fr_1fr] xl:p-8"
       >
@@ -16,7 +17,7 @@ function App() {
           id="menu"
           className={`${areaClass} md:col-span-2 xl:col-span-1 xl:row-span-2`}
         >
-          placeholder
+          placeholder menu
         </nav>
         <section id="summary" className={`${areaClass} md:col-span-2`}>
           placeholder (cards)
@@ -28,7 +29,8 @@ function App() {
           placeholder
         </section>
       </main>
-    </>
+      <Footer />
+    </div>
   );
 }
 

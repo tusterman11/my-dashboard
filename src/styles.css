@@ -15,3 +15,7 @@
   --font-sans: 'Segoe UI', system-ui, sans-serif;
   --font-heading: 'Palatino Linotype', 'Book Antiqua', serif;
 }
+
+body {
+  min-width: 320px;
+}

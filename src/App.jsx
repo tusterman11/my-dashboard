@@ -37,6 +37,106 @@ const eras = [
   },
 ];
 
+const records = [
+  {
+    title: 'Orchid',
+    genre: '',
+    year: '1995',
+    description: '',
+  },
+
+  {
+    title: 'Morningrise',
+    genre: '',
+    year: '1996',
+    description: '',
+  },
+
+  {
+    title: 'My Arms, Your Hearse',
+    genre: '',
+    year: '1998',
+    description: '',
+  },
+
+  {
+    title: 'Still Life',
+    genre: '',
+    year: '1999',
+    description: '',
+  },
+
+  {
+    title: 'Blackwater Park',
+    genre: '',
+    year: '2001',
+    description: '',
+  },
+
+  {
+    title: 'Deliverance',
+    genre: '',
+    year: '2002',
+    description: '',
+  },
+
+  {
+    title: 'Damnation',
+    genre: '',
+    year: '2003',
+    description: '',
+  },
+
+  {
+    title: 'Ghost Reveries',
+    genre: '',
+    year: '2005',
+    description: '',
+  },
+
+  {
+    title: 'Watershed',
+    genre: '',
+    year: '2008',
+    description: '',
+  },
+
+  {
+    title: 'Heritage',
+    genre: '',
+    year: '2011',
+    description: '',
+  },
+
+  {
+    title: 'Pale Communion',
+    genre: '',
+    year: '2014',
+    description: '',
+  },
+
+  {
+    title: 'Sorceress',
+    genre: '',
+    year: '2016',
+    description: '',
+  },
+
+  {
+    title: 'In Cauda Venenum',
+    genre: '',
+    year: '2019',
+    description: '',
+  },
+
+  {
+    title: 'The Last Will and Testament',
+    genre: '',
+    year: '2024',
+    description: '',
+  },
+];
+
 const summaryCards = [
   { title: 'Documented Tracks', value: '150 +' },
   { title: 'Studio Albuns', value: 14 },
@@ -85,13 +185,11 @@ function App() {
                   </h3>
                   <StatusBadge label={era.genre} isActive={index === 0} />
                 </div>
-                <div className="mt-2">
-                  <StatusBadge label={`Era ${index + 1}`} />
-                </div>
+                <div className="mt-2"></div>
                 <p className="mt-2 text-sm leading-5 text-muted">
                   {era.description}
                 </p>
-                <div className="mt-3 border-y border-border">
+                <div>
                   <InfoRow label="Period" value={era.period} />
                 </div>
                 <DetailsToggle>
@@ -100,6 +198,21 @@ function App() {
               </article>
             ))}
           </div>
+        </Panel>
+        <Panel id="discography" title="Discography">
+          <ul>
+            {records.map((record) => (
+              <li
+                key={record.title}
+                className="flex flex-wrap items-center justify-between gap-2 border-b border-border py-3"
+              >
+                <div>
+                  <p className="font-bold">{record.title}</p>
+                  <p className="text-sm text-muted">{record.year}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </Panel>
       </main>
       <Footer />

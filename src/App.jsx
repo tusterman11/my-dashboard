@@ -37,6 +37,13 @@ const eras = [
   },
 ];
 
+const summaryCards = [
+  { title: 'Documented Tracks', value: '150 +' },
+  { title: 'Studio Albuns', value: 14 },
+  { title: 'Years Active', value: '35 +', isHighlighted: true },
+  { title: 'Musical Eras', value: '3' },
+];
+
 function App() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -55,10 +62,13 @@ function App() {
             their impact on the music industry.
           </section>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 ">
-            <SummaryCard title="Documented Tracks" value="150 +" />
-            <SummaryCard title="Studio Albuns" value={14} />
-            <SummaryCard title="Years Active" value="35 +" isHighlighted />
-            <SummaryCard title="Musical Eras" value="3" />
+            {summaryCards.map((card) => (
+              <SummaryCard
+                key={card.title}
+                title={card.title}
+                value={card.value}
+              />
+            ))}
           </div>
         </Panel>
         <Panel

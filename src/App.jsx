@@ -6,6 +6,7 @@ import Panel from './components/Panel.jsx';
 import InfoRow from './components/InfoRow.jsx';
 import StatusBadge from './components/StatusBadge.jsx';
 import DetailsToggle from './components/DetailsToggle.jsx';
+import ListItem from './components/ListItem.jsx';
 
 const eras = [
   {
@@ -202,15 +203,11 @@ function App() {
         <Panel id="discography" title="Discography">
           <ul>
             {records.map((record) => (
-              <li
-                key={record.title}
-                className="flex flex-wrap items-center justify-between gap-2 border-b border-border py-3"
-              >
-                <div>
-                  <p className="font-bold">{record.title}</p>
-                  <p className="text-sm text-muted">{record.year}</p>
-                </div>
-              </li>
+              <ListItem
+                key={record.id}
+                title={record.title}
+                year={record.year}
+              />
             ))}
           </ul>
         </Panel>

@@ -105,10 +105,10 @@ const records = [
 ];
 
 const filterOptions = [
-  { label: 'Todos', value: 'all' },
-  { label: 'Anos 1990', value: '1990s' },
-  { label: 'Anos 2000', value: '2000s' },
-  { label: 'Anos 2010+', value: '2010s+' },
+  { label: 'All', value: 'all' },
+  { label: '1990s', value: '1990s' },
+  { label: '2000s', value: '2000s' },
+  { label: '2010s+', value: '2010s+' },
 ];
 
 function ListPage() {

@@ -41,16 +41,14 @@ function ListFilter({
           type="search"
           value={searchTerm}
           onChange={(event) => onSearchChange(event.target.value)}
-          placeholder="Título ou ano"
+          placeholder="Title or year"
           className="w-full rounded-lg border border-border bg-background px-3 py-2 text-foreground outline-none focus:border-primary"
         />
       </label>
 
       <p className="text-sm text-muted" aria-live="polite">
         {resultCount}{' '}
-        {resultCount === 1
-          ? `${itemLabel} found`
-          : `${itemLabel}s found`}
+        {resultCount === 1 ? `${itemLabel} found` : `${itemLabel}s found`}
       </p>
     </div>
   );

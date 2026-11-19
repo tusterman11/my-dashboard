@@ -2,107 +2,7 @@ import { useState } from 'react';
 import Menu from '../components/Menu.jsx';
 import Panel from '../components/Panel.jsx';
 import ListItem from '../components/ListItem.jsx';
-
-const records = [
-  {
-    id: 'orchid',
-    title: 'Orchid',
-    year: '1995',
-    era: '1990s',
-    genre: 'Black Metal',
-  },
-  {
-    id: 'morningrise',
-    title: 'Morningrise',
-    year: '1996',
-    era: '1990s',
-    genre: 'Black Metal',
-  },
-  {
-    id: 'my-arms-your-hearse',
-    title: 'My Arms, Your Hearse',
-    year: '1998',
-    era: '1990s',
-    genre: 'Progressive death metal',
-  },
-  {
-    id: 'still-life',
-    title: 'Still Life',
-    year: '1999',
-    era: '1990s',
-    genre: 'Progressive death metal',
-  },
-  {
-    id: 'blackwater-park',
-    title: 'Blackwater Park',
-    year: '2001',
-    era: '2000s',
-    genre: 'Progressive death metal',
-  },
-  {
-    id: 'deliverance',
-    title: 'Deliverance',
-    year: '2002',
-    era: '2000s',
-    genre: 'Progressive death metal',
-  },
-  {
-    id: 'damnation',
-    title: 'Damnation',
-    year: '2003',
-    era: '2000s',
-    genre: 'Progressive rock',
-  },
-  {
-    id: 'ghost-reveries',
-    title: 'Ghost Reveries',
-    year: '2005',
-    era: '2000s',
-    genre: 'Progressive metal',
-  },
-  {
-    id: 'watershed',
-    title: 'Watershed',
-    year: '2008',
-    era: '2000s',
-    genre: 'Progressive metal',
-  },
-  {
-    id: 'heritage',
-    title: 'Heritage',
-    year: '2011',
-    era: '2010s+',
-    genre: 'Progressive rock',
-  },
-  {
-    id: 'pale-communion',
-    title: 'Pale Communion',
-    year: '2014',
-    era: '2010s+',
-    genre: 'Progressive rock',
-  },
-  {
-    id: 'sorceress',
-    title: 'Sorceress',
-    year: '2016',
-    era: '2010s+',
-    genre: 'Progressive rock',
-  },
-  {
-    id: 'in-cauda-venenum',
-    title: 'In Cauda Venenum',
-    year: '2019',
-    era: '2010s+',
-    genre: 'Progressive rock',
-  },
-  {
-    id: 'the-last-will-and-testament',
-    title: 'The Last Will and Testament',
-    year: '2024',
-    era: '2010s+',
-    genre: 'Progressive rock/metal',
-  },
-];
+import { useOpeth } from '../context/OpethContext';
 
 const filterOptions = [
   { label: 'All', value: 'all' },
@@ -112,10 +12,11 @@ const filterOptions = [
 ];
 
 function ListPage() {
+  const { opeth } = useOpeth();
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const visibleRecords = records.filter((record) => {
+  const visibleRecords = opeth.filter((record) => {
     const matchesFilter = activeFilter === 'all' || record.era === activeFilter;
     const query = searchTerm.trim().toLowerCase();
     const matchesSearch =
@@ -170,7 +71,7 @@ function ListPage() {
 
           <p className="text-sm text-muted" aria-live="polite">
             {visibleRecords.length}{' '}
-            {visibleRecords.length === 1 ? 'records found' : 'records found'}
+            {visibleRecords.length === 1 ? 'record found' : 'records found'}
           </p>
         </div>
 

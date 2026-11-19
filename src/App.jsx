@@ -3,6 +3,8 @@ import Footer from './components/Footer.jsx';
 import DashboardPage from './pages/DashboardPage.jsx';
 import ListPage from './pages/ListPage.jsx';
 import { Routes, Route } from 'react-router-dom';
+import NotFoundPage from './pages/NotFoundPage.jsx';
+import NewSong from './pages/NewSong.jsx';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<DashboardPage />} />
           <Route path="/lista" element={<ListPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+          <Route path="/new" element={<NewSong />} />
         </Routes>
       </main>
       <Footer />

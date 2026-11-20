@@ -16,16 +16,22 @@ function ListPage() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const visibleRecords = opeth.filter((record) => {
-    const matchesFilter = activeFilter === 'all' || record.era === activeFilter;
-    const query = searchTerm.trim().toLowerCase();
-    const matchesSearch =
-      query === '' ||
-      record.title.toLowerCase().includes(query) ||
-      record.year.includes(query);
+  const visibleRecords = opeth
+    .filter((record) => {
+      const matchesFilter =
+        activeFilter === 'all' || record.era === activeFilter;
+      const query = searchTerm.trim().toLowerCase();
+      const matchesSearch =
+        query === '' ||
+        record.title.toLowerCase().includes(query) ||
+        record.year.includes(query);
 
-    return matchesFilter && matchesSearch;
-  });
+      return matchesFilter && matchesSearch;
+    })
+    .sort(
+      (firstRecord, secondRecord) =>
+        Number(firstRecord.year) - Number(secondRecord.year),
+    );
 
   return (
     <>

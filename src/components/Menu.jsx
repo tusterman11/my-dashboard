@@ -51,6 +51,11 @@ function Menu() {
             Discography
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/novo" onClick={closeMenu} className={linkClass}>
+            New Album
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

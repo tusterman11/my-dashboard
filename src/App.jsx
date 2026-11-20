@@ -18,8 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<DashboardPage />} />
           <Route path="/lista" element={<ListPage />} />
+          <Route path="/novo" element={<NewSong />} />
           <Route path="*" element={<NotFoundPage />} />
-          <Route path="/new" element={<NewSong />} />
         </Routes>
       </main>
       <Footer />
